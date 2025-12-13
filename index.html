@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brotherhood Investment Fund — Information Session</title>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+    :root{
+      --ink:#121212;
+      --muted:#6b6f76;
+      --paper:#ffffff;
+      --bg:#f1f1f1;
+      --line:#e6e7ea;
+      --accent:#cf2e2e;
+      --accent-soft:#f7d7d7;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    html{ scroll-behavior:smooth; }
+
+    body{
+      margin:0;
+      background:var(--bg);
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      font-size:16px;
+    }
+
+    /* Page wrapper (paper card) */
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:56px 18px;
+    }
+
+    .page{
+      width:min(1100px, 100%);
+      background:var(--paper);
+      border:1px solid var(--line);
+      box-shadow:0 12px 40px rgba(0,0,0,.06);
+      border-radius:16px;
+      overflow:visible;
+      padding:28px;
+    }
+
+    /* Sticky nav */
+    .nav{
+      position:sticky;
+      top:14px;
+      z-index:50;
+      margin:0 0 16px;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:linear-gradient(#fff,#fbfbfb);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      box-shadow:0 8px 22px rgba(0,0,0,.05);
+    }
+
+    .nav-left{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:180px;
+    }
+
+    .dot{
+      width:9px;height:9px;border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 0 4px var(--accent-soft);
+      flex:0 0 auto;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+
+    .brand .kicker{
+      font-size:11px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .brand .name{
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:-.01em;
+      margin-top:3px;
+      color:var(--ink);
+      white-space:nowrap;
+    }
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+      gap:8px;
+    }
+
+    .nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-size:12.5px;
+      font-weight:700;
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid transparent;
+      transition:all .15s ease;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      white-space:nowrap;
+    }
+
+    .nav a:hover{
+      color:var(--ink);
+      border-color:var(--line);
+      background:#fff;
+    }
+
+    .nav a.primary{
+      color:var(--ink);
+      border-color:var(--line);
+      background:#fff;
+    }
+
+    /* Burger button (hidden on desktop) */
+    .burger{
+      display:none;
+      appearance:none;
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:999px;
+      padding:10px 12px;
+      cursor:pointer;
+      color:var(--ink);
+      font-weight:800;
+      font-size:12.5px;
+      line-height:1;
+      box-shadow:0 8px 22px rgba(0,0,0,.05);
+    }
+    .burger:focus{ outline:2px solid rgba(207,46,46,.25); outline-offset:2px; }
+
+    .burger-icon{
+      width:18px;
+      height:12px;
+      display:inline-flex;
+      flex-direction:column;
+      justify-content:space-between;
+      margin-right:8px;
+      vertical-align:middle;
+    }
+    .burger-icon span{
+      display:block;
+      height:2px;
+      background:var(--ink);
+      border-radius:2px;
+      opacity:.85;
+    }
+
+    /* Mobile dropdown panel */
+    .mobile-menu{
+      display:none;
+      position:absolute;
+      right:12px;
+      top:58px;
+      width:min(260px, calc(100vw - 32px));
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:14px;
+      box-shadow:0 14px 44px rgba(0,0,0,.10);
+      overflow:hidden;
+      padding:10px;
+    }
+    .mobile-menu a{
+      display:flex;
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid transparent;
+      color:var(--ink);
+      font-size:13px;
+      font-weight:800;
+      text-decoration:none;
+    }
+    .mobile-menu a:hover{
+      border-color:var(--line);
+      background:linear-gradient(#fff,#fbfbfb);
+    }
+    .mobile-menu .divider{
+      height:1px;
+      background:var(--line);
+      margin:8px 0;
+    }
+
+    /* Sections */
+    section{
+      padding:28px 38px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+      margin:16px 0;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      padding-bottom:14px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:18px;
+    }
+
+    .section-title{
+      margin:0;
+      font-size:26px;
+      line-height:1.15;
+      letter-spacing:-.02em;
+      font-weight:800;
+    }
+    .section-title .accent{ color:var(--accent); }
+
+    .section-sub{
+      margin:10px 0 0;
+      color:var(--muted);
+      font-size:14.5px;
+      line-height:1.75;
+      max-width:70ch;
+    }
+
+    .rule{
+      height:3px;
+      width:140px;
+      background:var(--ink);
+      border-radius:999px;
+      opacity:.9;
+      margin-top:14px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:12.5px;
+      font-weight:700;
+      background:linear-gradient(#fff,#fbfbfb);
+      white-space:nowrap;
+    }
+
+    /* Hero layout */
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap:18px;
+      margin-top:6px;
+    }
+
+    .hero-card{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:18px 18px;
+      background:linear-gradient(#fff,#fbfbfb);
+    }
+
+    .hero-card h3{
+      margin:0 0 10px;
+      font-size:14.5px;
+      font-weight:800;
+      letter-spacing:-.01em;
+    }
+
+    .hero-card p{
+      margin:0;
+      color:#23262b;
+      font-size:14.5px;
+      line-height:1.85;
+    }
+
+    .details{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .detail{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px 14px;
+      background:#fff;
+    }
+
+    .detail .label{
+      font-size:12px;
+      color:var(--muted);
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .detail .value{
+      margin-top:6px;
+      font-size:14.5px;
+      font-weight:800;
+      letter-spacing:-.01em;
+    }
+
+    .pill{
+      display:inline-block;
+      font-size:11.5px;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:var(--accent);
+      background:linear-gradient(#fff,#fbfbfb);
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:6px 10px;
+      margin-top:10px;
+    }
+
+    /* Agenda */
+    .agenda{ display:flex; flex-direction:column; gap:12px; }
+
+    .agenda-item{
+      border-top:1px solid var(--line);
+      padding-top:14px;
+      display:grid;
+      grid-template-columns: 140px 1fr;
+      gap:14px;
+    }
+
+    .time{
+      font-weight:900;
+      color:var(--accent);
+      letter-spacing:-.01em;
+      font-size:14px;
+      white-space:nowrap;
+    }
+
+    .agenda-item h4{
+      margin:0;
+      font-size:15px;
+      font-weight:800;
+      letter-spacing:-.01em;
+    }
+
+    .agenda-item p{
+      margin:6px 0 0;
+      color:#23262b;
+      font-size:14.5px;
+      line-height:1.85;
+    }
+
+    /* FAQ list (stacked) */
+    .faq{ display:flex; flex-direction:column; gap:22px; }
+
+    .faq-item{
+      border-top:1px solid var(--line);
+      padding-top:18px;
+      display:grid;
+      grid-template-columns: 240px 1fr;
+      gap:18px;
+    }
+
+    .meta{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+
+    .num{
+      font-weight:900;
+      color:var(--accent);
+      font-size:15px;
+      min-width:30px;
+    }
+
+    .meta h4{
+      margin:0;
+      font-size:15px;
+      line-height:1.45;
+      font-weight:900;
+      letter-spacing:-.01em;
+    }
+
+    .meta .label{
+      margin-top:7px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.55;
+      font-weight:600;
+    }
+
+    .answer{
+      color:#23262b;
+      font-size:14.5px;
+      line-height:1.9;
+    }
+    .answer p{ margin:0; }
+
+    /* Contact section */
+    .contact-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      margin-top:8px;
+    }
+
+    .contact-card{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:18px;
+      background:linear-gradient(#fff,#fbfbfb);
+    }
+
+    .contact-card h3{
+      margin:0 0 10px;
+      font-size:15px;
+      font-weight:900;
+      letter-spacing:-.01em;
+    }
+
+    .contact-card p{
+      margin:0;
+      color:#23262b;
+      font-size:14.5px;
+      line-height:1.85;
+    }
+
+    .contact-card .line{
+      margin-top:12px;
+      padding-top:12px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13.5px;
+      line-height:1.7;
+    }
+
+    .contact-card a{
+      color:var(--ink);
+      font-weight:900;
+      text-decoration:none;
+      border-bottom:1px solid var(--line);
+    }
+
+    .contact-card a:hover{ border-bottom-color:var(--accent); }
+
+    /* Footer */
+    .footer{
+      margin-top:16px;
+      padding:14px 12px 2px;
+      color:var(--muted);
+      font-size:12.5px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+    }
+    .footer strong{ color:var(--ink); }
+
+    .mini-rule{
+      height:2px;
+      width:110px;
+      background:var(--accent);
+      border-radius:999px;
+      opacity:.85;
+    }
+
+    /* ===== Small screens: fix spacing + burger nav ===== */
+    @media (max-width: 700px){
+      /* tighter outer padding so content breathes */
+      .wrap{ padding:20px 12px; }
+
+      .page{
+        padding:14px;
+        border-radius:14px;
+      }
+
+      /* nav: reduce pill look + make room for burger */
+      .nav{
+        top:10px;
+        border-radius:14px;
+        padding:10px 10px;
+        position:sticky;
+      }
+
+      .nav-left{ min-width:0; }
+
+      .brand .kicker{ font-size:10px; }
+      .brand .name{ font-size:12px; }
+
+      /* hide desktop links, show burger */
+      .nav-links{ display:none; }
+      .burger{ display:inline-flex; align-items:center; }
+
+      /* dropdown positioning for smaller nav */
+      .mobile-menu{ top:56px; right:10px; }
+
+      /* sections spacing */
+      section{
+        padding:18px 14px;
+        margin:12px 0;
+        border-radius:14px;
+      }
+
+      .section-head{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+        padding-bottom:12px;
+        margin-bottom:14px;
+      }
+
+      .section-title{
+        font-size:22px;
+        line-height:1.15;
+      }
+
+      .section-sub{
+        font-size:14px;
+        line-height:1.75;
+      }
+
+      .rule{ width:110px; margin-top:12px; }
+
+      .hero-grid{ grid-template-columns:1fr; }
+      .agenda-item{ grid-template-columns:1fr; }
+      .faq-item{ grid-template-columns:1fr; }
+      .contact-grid{ grid-template-columns:1fr; }
+
+      /* Make badges not float awkwardly on mobile */
+      .badge{ font-size:12px; padding:9px 11px; }
+
+      /* Improve tap targets */
+      .mobile-menu a{ padding:12px 12px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <main class="page" role="main">
+
+      <!-- Navigation -->
+      <nav class="nav" aria-label="Page navigation" id="topNav" style="position:sticky;">
+        <div class="nav-left">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="brand">
+            <div class="kicker">Brotherhood Investment Fund</div>
+            <div class="name">Information Session</div>
+          </div>
+        </div>
+
+        <!-- Desktop links -->
+        <div class="nav-links" aria-label="Desktop navigation links">
+          <a class="primary" href="#hero">Overview</a>
+          <a href="#agenda">Agenda</a>
+          <a href="#faq">Member Q&amp;A</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <!-- Mobile burger -->
+        <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="burger-icon" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+          Menu
+        </button>
+
+        <!-- Mobile dropdown -->
+        <div class="mobile-menu" id="mobileMenu" role="menu" aria-label="Mobile navigation">
+          <a href="#hero" role="menuitem">Overview</a>
+          <a href="#agenda" role="menuitem">Agenda</a>
+          <a href="#faq" role="menuitem">Member Q&amp;A</a>
+          <div class="divider" aria-hidden="true"></div>
+          <a href="#contact" role="menuitem">Contact</a>
+        </div>
+      </nav>
+
+      <!-- SECTION 1: HERO -->
+      <section id="hero">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Building discipline, unity, and <span class="accent">long-term growth</span></h2>
+            <p class="section-sub">
+              The Brotherhood Investment Fund is a private, structured initiative where members contribute fixed monthly amounts,
+              learn together, and collectively invest in real businesses and productive assets. This session is designed to share
+              the vision, answer questions, and connect with like-minded individuals.
+            </p>
+            <div class="rule"></div>
+          </div>
+          <div class="badge"><span class="dot" aria-hidden="true"></span> Version 1.0</div>
+        </div>
+
+        <div class="hero-grid">
+          <div class="hero-card">
+            <h3>Short About</h3>
+            <p>
+              This initiative is built on clarity, structure, and shared responsibility. We focus on consistent contributions,
+              transparent tracking, and careful decision-making. Attendance is informational—there is no obligation to join.
+            </p>
+            <span class="pill">Narrow path • long game</span>
+          </div>
+
+          <div class="details">
+            <div class="detail">
+              <div class="label">Venue</div>
+              <div class="value">Next Level Fitness Studio</div>
+            </div>
+            <div class="detail">
+              <div class="label">Location</div>
+              <div class="value">Church Street, Rehoboth</div>
+            </div>
+            <div class="detail">
+              <div class="label">Time</div>
+              <div class="value">Sunday • 5:00 PM</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: MEETING AGENDA -->
+      <section id="agenda">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Meeting <span class="accent">Agenda</span></h2>
+            <p class="section-sub">
+              A clear structure for the session to ensure useful discussion, transparency, and enough time for questions and networking.
+            </p>
+            <div class="rule"></div>
+          </div>
+          <div class="badge">Information &amp; Networking</div>
+        </div>
+
+        <div class="agenda">
+          <div class="agenda-item">
+            <div class="time">5 min</div>
+            <div>
+              <h4>Welcome &amp; Purpose</h4>
+              <p>Opening remarks, what the session will cover, and what attendees can expect.</p>
+            </div>
+          </div>
+
+          <div class="agenda-item">
+            <div class="time">10 min</div>
+            <div>
+              <h4>Why the Fund Exists</h4>
+              <p>Why group discipline and structured capital matters, and what challenges we aim to solve.</p>
+            </div>
+          </div>
+
+          <div class="agenda-item">
+            <div class="time">15 min</div>
+            <div>
+              <h4>Overview of the Fund</h4>
+              <p>Vision, guiding principles, high-level structure, and what the fund is (and is not).</p>
+            </div>
+          </div>
+
+          <div class="agenda-item">
+            <div class="time">10 min</div>
+            <div>
+              <h4>How Participation Works</h4>
+              <p>Contribution approach, transparency, decision-making, and the expectations of members.</p>
+            </div>
+          </div>
+
+          <div class="agenda-item">
+            <div class="time">10 min</div>
+            <div>
+              <h4>Risk &amp; Long-Term Thinking</h4>
+              <p>Realistic expectations, no guaranteed returns, and why patience is essential.</p>
+            </div>
+          </div>
+
+          <div class="agenda-item">
+            <div class="time">15–20 min</div>
+            <div>
+              <h4>Open Q&amp;A</h4>
+              <p>Address pre-submitted questions and open the floor for additional questions.</p>
+            </div>
+          </div>
+
+          <div class="agenda-item">
+            <div class="time">10–15 min</div>
+            <div>
+              <h4>Networking &amp; Close</h4>
+              <p>Connect with attendees, discuss ideas informally, and share next steps.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: FAQ -->
+      <section id="faq">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Member Questions &amp; <span class="accent">Clear Responses</span></h2>
+            <p class="section-sub">
+              The answers below are intended to provide clarity and set shared expectations. Exact policies and processes will
+              be documented in the fund charter as the group finalizes structure.
+            </p>
+            <div class="rule"></div>
+          </div>
+          <div class="badge">FAQ</div>
+        </div>
+
+        <div class="faq">
+          <!-- (Your FAQ items remain the same — keep your existing 01–20 blocks here) -->
+
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">01</div>
+              <div>
+                <h4>What exactly is the Brotherhood Investment Fund?</h4>
+                <div class="label">Definition &amp; scope</div>
+              </div>
+            </div>
+            <div class="answer"><p>A private, structured initiative where members contribute fixed monthly amounts, learn together, and collectively invest in real businesses and productive assets for long-term growth.</p></div>
+          </div>
+
+          <!-- ... keep the rest of your FAQ items ... -->
+
+        </div>
+      </section>
+
+      <!-- SECTION 4: CONTACT -->
+      <section id="contact">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">How to <span class="accent">Get in Touch</span></h2>
+            <p class="section-sub">
+              If you are interested in learning more or would like to attend future sessions, you are welcome to contact us.
+              Please include your full name and indicate whether you prefer in-person or virtual participation.
+            </p>
+            <div class="rule"></div>
+          </div>
+          <div class="badge">Contact</div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>WhatsApp / Call</h3>
+            <p>Reach out directly for questions, RSVP, or to request the virtual meeting link.</p>
+            <div class="line">
+              Phone: <a href="tel:+264817161218">+264 81 716 1218</a> / <a href="tel:+264815732680">+264 81 573 2680</a><br />
+              Hours: 08:00–20:00
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>Questions Ahead of Time</h3>
+            <p>If you have questions you would like addressed during a meeting, send them ahead of time so we can prepare clear responses.</p>
+            <div class="line">
+              Preferred: WhatsApp message<br />
+              Include: Name + question + topic
+            </div>
+          </div>`
+        </div>
+
+        <div style="margin-top:14px;">
+          <span class="pill">Attendance is informational • No obligation</span>
+        </div>
+      </section>
+
+      <footer class="footer" role="contentinfo" style="flex-direction:column; align-items:flex-start;">
+        <div style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:16px;">
+          <div><strong>Brotherhood Investment Fund</strong> — Information Session</div>
+          <div class="mini-rule"></div>
+          <div>Updated: <span style="color:var(--ink);font-weight:900;">Version 1.0</span></div>
+        </div>
+
+        <div style="
+          width:100%;
+          margin-top:10px;
+          padding-top:10px;
+          border-top:1px solid var(--line);
+          font-size:10px;
+          color:var(--muted);
+        ">
+          Website built by <strong style="color:#c9160c;">XPSYS TECHNOLOGY & NEXT LEVEL FITNESS</strong>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      const btn = document.getElementById('burgerBtn');
+      const menu = document.getElementById('mobileMenu');
+
+      function closeMenu() {
+        menu.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+      }
+
+      function openMenu() {
+        menu.style.display = 'block';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        if (isOpen) closeMenu();
+        else openMenu();
+      });
+
+      // Close when clicking outside
+      document.addEventListener('click', function () {
+        closeMenu();
+      });
+
+      // Close when clicking a link
+      menu.addEventListener('click', function (e) {
+        if (e.target && e.target.tagName === 'A') closeMenu();
+      });
+
+      // Close on escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
+</body>
+</html>
