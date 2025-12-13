@@ -14,7 +14,7 @@
       --paper:#ffffff;
       --bg:#f1f1f1;
       --line:#e6e7ea;
-      --accent:#cf2e2e;
+      --accent:#006A4E;
       --accent-soft:#f7d7d7;
     }
 
@@ -489,7 +489,6 @@
 
     /* ===== Small screens: fix spacing + burger nav ===== */
     @media (max-width: 700px){
-      /* tighter outer padding so content breathes */
       .wrap{ padding:20px 12px; }
 
       .page{
@@ -497,27 +496,21 @@
         border-radius:14px;
       }
 
-      /* nav: reduce pill look + make room for burger */
       .nav{
         top:10px;
         border-radius:14px;
         padding:10px 10px;
-        position:sticky;
       }
 
       .nav-left{ min-width:0; }
-
       .brand .kicker{ font-size:10px; }
       .brand .name{ font-size:12px; }
 
-      /* hide desktop links, show burger */
       .nav-links{ display:none; }
       .burger{ display:inline-flex; align-items:center; }
 
-      /* dropdown positioning for smaller nav */
       .mobile-menu{ top:56px; right:10px; }
 
-      /* sections spacing */
       section{
         padding:18px 14px;
         margin:12px 0;
@@ -549,10 +542,7 @@
       .faq-item{ grid-template-columns:1fr; }
       .contact-grid{ grid-template-columns:1fr; }
 
-      /* Make badges not float awkwardly on mobile */
       .badge{ font-size:12px; padding:9px 11px; }
-
-      /* Improve tap targets */
       .mobile-menu a{ padding:12px 12px; }
     }
   </style>
@@ -563,7 +553,7 @@
     <main class="page" role="main">
 
       <!-- Navigation -->
-      <nav class="nav" aria-label="Page navigation" id="topNav" style="position:sticky;">
+      <nav class="nav" aria-label="Page navigation" id="topNav">
         <div class="nav-left">
           <span class="dot" aria-hidden="true"></span>
           <div class="brand">
@@ -727,8 +717,7 @@
         </div>
 
         <div class="faq">
-          <!-- (Your FAQ items remain the same — keep your existing 01–20 blocks here) -->
-
+          <!-- 01 -->
           <div class="faq-item">
             <div class="meta">
               <div class="num">01</div>
@@ -737,11 +726,301 @@
                 <div class="label">Definition &amp; scope</div>
               </div>
             </div>
-            <div class="answer"><p>A private, structured initiative where members contribute fixed monthly amounts, learn together, and collectively invest in real businesses and productive assets for long-term growth.</p></div>
+            <div class="answer">
+              <p>
+                A private, structured initiative where members contribute fixed monthly amounts, learn together,
+                and collectively invest in real businesses and productive assets for long-term growth.
+              </p>
+            </div>
           </div>
 
-          <!-- ... keep the rest of your FAQ items ... -->
+          <!-- 02 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">02</div>
+              <div>
+                <h4>Why does this fund exist?</h4>
+                <div class="label">The problem we solve</div>
+              </div>
+            </div>
+            <div class="answer">
+              <p>
+                Many people struggle to save and invest consistently on their own, and individual capital is often too small
+                for meaningful opportunities. The fund creates structure, accountability, and scale.
+              </p>
+            </div>
+          </div>
 
+          <!-- 03 (UPDATED) -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">03</div>
+              <div>
+                <h4>How does participation work?</h4>
+                <div class="label">What members do</div>
+              </div>
+            </div>
+            <div class="answer">
+              <p>
+                Members who choose to join during the establishment phase commit to a fixed monthly contribution and shared
+                governance rules from the outset. Contributions are pooled, tracked transparently, and used only after group
+                discussion and approval.
+              </p>
+              <p style="margin-top:10px;">
+                Participation in this fund is limited to founding members. Once the fund is established and operations begin,
+                new members will not be accepted into this specific fund.
+              </p>
+            </div>
+          </div>
+
+          <!-- 04 (NEW) -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">04</div>
+              <div>
+                <h4>Is membership open indefinitely, or will new members be accepted later?</h4>
+                <div class="label">Membership policy</div>
+              </div>
+            </div>
+            <div class="answer">
+              <p>
+                Membership for the Brotherhood Investment Fund is limited to those who commit during the establishment phase.
+                Once the fund is formally established and operations begin, no new members will be accepted into this specific fund.
+              </p>
+              <p style="margin-top:10px;">
+                This approach protects stability, alignment, and trust between founding members, and prevents dilution of the fund’s culture and standards.
+              </p>
+            </div>
+          </div>
+
+          <!-- 05 (NEW) -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">05</div>
+              <div>
+                <h4>Why is the fund closed to new members after formation?</h4>
+                <div class="label">Governance &amp; stability</div>
+              </div>
+            </div>
+            <div class="answer">
+              <p>
+                Allowing new members later often introduces uneven commitment, misalignment, and governance complexity.
+                By closing membership after formation, the fund protects decision-making integrity, fairness between members,
+                and long-term strategic focus.
+              </p>
+              <p style="margin-top:10px;">
+                This model prioritizes quality of participation over quantity of members.
+              </p>
+            </div>
+          </div>
+
+          <!-- 06 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">06</div>
+              <div>
+                <h4>How and when are contributions made?</h4>
+                <div class="label">Payment structure</div>
+              </div>
+            </div>
+            <div class="answer"><p>Contributions are made monthly, by a fixed due date, using the agreed payment method. This ensures predictability, fairness, and proper planning for investments.</p></div>
+          </div>
+
+          <!-- 07 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">07</div>
+              <div>
+                <h4>What happens if someone misses a payment?</h4>
+                <div class="label">Standards &amp; consequences</div>
+              </div>
+            </div>
+            <div class="answer"><p>Missed payments are recorded and handled according to predefined rules (e.g., grace period where applicable, review, suspension for repeated non-payment). Standards protect the group.</p></div>
+          </div>
+
+          <!-- 08 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">08</div>
+              <div>
+                <h4>How is transparency ensured?</h4>
+                <div class="label">Trust through systems</div>
+              </div>
+            </div>
+            <div class="answer"><p>All contributions and expenses are recorded in a shared tracking system visible to members. Regular summaries are provided, and no funds are used without documentation and approval.</p></div>
+          </div>
+
+          <!-- 09 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">09</div>
+              <div>
+                <h4>Who manages and controls the funds?</h4>
+                <div class="label">Custody &amp; control</div>
+              </div>
+            </div>
+            <div class="answer"><p>Funds are held in a dedicated account with restricted access. No single person has unilateral control. Roles and responsibilities are defined and accountable to the group.</p></div>
+          </div>
+
+          <!-- 10 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">10</div>
+              <div>
+                <h4>How are investment decisions made?</h4>
+                <div class="label">Governance process</div>
+              </div>
+            </div>
+            <div class="answer"><p>Decisions follow a structured process: proposal, research, discussion, and democratic voting. Higher-risk decisions require broader agreement.</p></div>
+          </div>
+
+          <!-- 11 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">11</div>
+              <div>
+                <h4>What kind of investments will the fund make?</h4>
+                <div class="label">Focus areas</div>
+              </div>
+            </div>
+            <div class="answer"><p>The fund focuses on real, understandable investments such as small businesses, member-led ventures, and productive assets. Speculative or high-risk schemes are avoided.</p></div>
+          </div>
+
+          <!-- 12 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">12</div>
+              <div>
+                <h4>What returns should members expect?</h4>
+                <div class="label">Expectations</div>
+              </div>
+            </div>
+            <div class="answer"><p>There are no guaranteed returns. This is long-term wealth building. Returns depend on discipline, execution, market conditions, and time.</p></div>
+          </div>
+
+          <!-- 13 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">13</div>
+              <div>
+                <h4>What if an investment does not perform well?</h4>
+                <div class="label">Risk &amp; learning</div>
+              </div>
+            </div>
+            <div class="answer"><p>Not all investments succeed. The fund manages risk by starting small, researching thoroughly, diversifying, and improving decision-making over time.</p></div>
+          </div>
+
+          <!-- 14 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">14</div>
+              <div>
+                <h4>Can members withdraw their money?</h4>
+                <div class="label">Liquidity rules</div>
+              </div>
+            </div>
+            <div class="answer"><p>This is not a personal savings account. Withdrawals are limited and subject to group rules and approval, protecting the fund’s stability and long-term objectives.</p></div>
+          </div>
+
+          <!-- 15 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">15</div>
+              <div>
+                <h4>Is this suitable only for high-income individuals?</h4>
+                <div class="label">Accessibility</div>
+              </div>
+            </div>
+            <div class="answer"><p>No. The fund is designed for working-class men with accessible monthly contributions. Consistency matters more than income level.</p></div>
+          </div>
+
+          <!-- 16 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">16</div>
+              <div>
+                <h4>What happens if there is disagreement or conflict?</h4>
+                <div class="label">Stability</div>
+              </div>
+            </div>
+            <div class="answer"><p>Disagreements are expected. The charter defines how conflicts are handled through discussion, mediation, and voting. Rules take precedence over emotion.</p></div>
+          </div>
+
+          <!-- 17 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">17</div>
+              <div>
+                <h4>How is leadership structured?</h4>
+                <div class="label">Roles &amp; accountability</div>
+              </div>
+            </div>
+            <div class="answer"><p>Leadership roles are defined, accountable, and rotatable. The fund is built on systems, not personalities, to ensure continuity and fairness.</p></div>
+          </div>
+
+          <!-- 18 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">18</div>
+              <div>
+                <h4>What makes this different from other savings or investment groups?</h4>
+                <div class="label">Differentiation</div>
+              </div>
+            </div>
+            <div class="answer"><p>This fund combines structure, transparency, education, and long-term thinking. It focuses on building disciplined members alongside capital.</p></div>
+          </div>
+
+          <!-- 19 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">19</div>
+              <div>
+                <h4>Is this fund regulated or legally structured?</h4>
+                <div class="label">Compliance path</div>
+              </div>
+            </div>
+            <div class="answer"><p>The fund is currently a private initiative. As it matures, appropriate legal and regulatory structures will be explored to support growth, governance, and compliance.</p></div>
+          </div>
+
+          <!-- 20 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">20</div>
+              <div>
+                <h4>Is this a pyramid scheme or referral-based initiative?</h4>
+                <div class="label">How growth works</div>
+              </div>
+            </div>
+            <div class="answer"><p>No. There are no referral incentives, recruitment rewards, or payouts based on bringing in new members. Returns come only from approved investments.</p></div>
+          </div>
+
+          <!-- 21 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">21</div>
+              <div>
+                <h4>Who benefits most from the fund?</h4>
+                <div class="label">Fairness</div>
+              </div>
+            </div>
+            <div class="answer"><p>Members who are consistent, disciplined, and patient benefit the most. The system rewards commitment and long-term thinking, not shortcuts.</p></div>
+          </div>
+
+          <!-- 22 -->
+          <div class="faq-item">
+            <div class="meta">
+              <div class="num">22</div>
+              <div>
+                <h4>What is the long-term vision?</h4>
+                <div class="label">Direction</div>
+              </div>
+            </div>
+            <div class="answer"><p>The long-term vision is to grow into a mature, well-governed investment vehicle that builds sustainable wealth and opportunity over time—phased, intentional, and disciplined.</p></div>
+          </div>
+
+          <div style="margin-top:14px;">
+            <span class="pill">Membership is limited to founding members</span>
+          </div>
         </div>
       </section>
 
@@ -776,7 +1055,7 @@
               Preferred: WhatsApp message<br />
               Include: Name + question + topic
             </div>
-          </div>`
+          </div>
         </div>
 
         <div style="margin-top:14px;">
@@ -799,7 +1078,7 @@
           font-size:10px;
           color:var(--muted);
         ">
-          Website built by <strong style="color:#c9160c;">XPSYS TECHNOLOGY & NEXT LEVEL FITNESS</strong>
+          Website built by <strong style="color:#006A4E;">XPSYS TECHNOLOGY &amp; NEXT LEVEL FITNESS</strong>
         </div>
       </footer>
 
