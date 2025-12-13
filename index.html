@@ -16,15 +16,28 @@
       --paper: #ffffff;
       --bg: #f1f1f1;
       --line: #e6e7ea;
-      --accent: #c5a908;        /* gold */
-      --accent-word: #006A4E;   /* bottle green */
-      --accent-soft: #FFD700;   /* gold soft */
-      --accent-maroon: #800000;        /* maroon */
+      --accent: #c5a908;
+      /* gold */
+      --accent-word: #006A4E;
+      /* bottle green */
+      --accent-soft: #FFD700;
+      /* gold soft */
+      --accent-maroon: #800000;
+      /* maroon */
     }
 
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -154,9 +167,10 @@
       font-weight: 900;
       padding: 9px 14px;
     }
+
     .nav a.rsvp:hover {
       filter: brightness(0.98);
-      border-color: rgba(0,0,0,.06);
+      border-color: rgba(0, 0, 0, .06);
     }
 
     /* Burger button (hidden on desktop) */
@@ -369,7 +383,10 @@
       border-bottom: 1px solid var(--line);
       padding-bottom: 2px;
     }
-    .mini-link:hover { border-bottom-color: var(--maroon); }
+
+    .mini-link:hover {
+      border-bottom-color: var(--maroon);
+    }
 
     .pill {
       display: inline-block;
@@ -472,7 +489,9 @@
       line-height: 1.9;
     }
 
-    .answer p { margin: 0; }
+    .answer p {
+      margin: 0;
+    }
 
     /* Contact section */
     .contact-grid {
@@ -519,7 +538,9 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .contact-card a:hover { border-bottom-color: var(--accent); }
+    .contact-card a:hover {
+      border-bottom-color: var(--accent);
+    }
 
     /* Footer */
     .footer {
@@ -533,7 +554,9 @@
       gap: 16px;
     }
 
-    .footer strong { color: var(--ink); }
+    .footer strong {
+      color: var(--ink);
+    }
 
     .mini-rule {
       height: 2px;
@@ -545,7 +568,9 @@
 
     /* ===== Small screens: fix spacing + burger nav ===== */
     @media (max-width: 700px) {
-      .wrap { padding: 20px 12px; }
+      .wrap {
+        padding: 20px 12px;
+      }
 
       .page {
         padding: 14px;
@@ -558,15 +583,31 @@
         padding: 10px 10px;
       }
 
-      .nav-left { min-width: 0; }
+      .nav-left {
+        min-width: 0;
+      }
 
-      .brand .kicker { font-size: 10px; }
-      .brand .name { font-size: 12px; }
+      .brand .kicker {
+        font-size: 10px;
+      }
 
-      .nav-links { display: none; }
-      .burger { display: inline-flex; align-items: center; }
+      .brand .name {
+        font-size: 12px;
+      }
 
-      .mobile-menu { top: 56px; right: 10px; }
+      .nav-links {
+        display: none;
+      }
+
+      .burger {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .mobile-menu {
+        top: 56px;
+        right: 10px;
+      }
 
       section {
         padding: 18px 14px;
@@ -592,15 +633,35 @@
         line-height: 1.75;
       }
 
-      .rule { width: 110px; margin-top: 12px; }
+      .rule {
+        width: 110px;
+        margin-top: 12px;
+      }
 
-      .hero-grid { grid-template-columns: 1fr; }
-      .agenda-item { grid-template-columns: 1fr; }
-      .faq-item { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
 
-      .badge { font-size: 12px; padding: 9px 11px; }
-      .mobile-menu a { padding: 12px 12px; }
+      .agenda-item {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-item {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .badge {
+        font-size: 12px;
+        padding: 9px 11px;
+      }
+
+      .mobile-menu a {
+        padding: 12px 12px;
+      }
     }
   </style>
 </head>
@@ -612,13 +673,26 @@
       <!-- Navigation -->
       <nav class="nav" aria-label="Page navigation" id="topNav">
         <div class="nav-left">
-          <svg width="20" height="20" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M113.073 58.4297H86.3965L86.2734 133.63L86.7965 133.353L87.4119 132.276L88.1196 130.584L89.1965 127.753L90.6427 124.307L92.2119 120.645L94.3042 116.645L96.6734 113.045L98.6119 109.907L101.381 106.245L103.597 103.23L106.027 100.799L108.397 98.1528L110.858 95.5066L113.073 93.8143V58.4297Z" fill="#c5a908" />
-            <path d="M78.5546 80.3711H53.2315L53.0469 172.033L55.17 173.325L57.3853 174.771L59.8469 176.063L63.0161 177.663L66.6469 179.202L70.1238 180.556L73.2007 181.602L76.1238 182.186L78.5546 182.002V80.3711Z" fill="#c5a908" />
-            <path d="M200 100C200 155.228 155.228 200 100 200C44.7715 200 0 155.228 0 100C0 44.7715 44.7715 0 100 0C155.228 0 200 44.7715 200 100ZM5.75261 100C5.75261 147.47 40.8478 186.743 86.5073 193.289C88.453 193.568 90.4179 193.787 92.4 193.945C94.907 194.145 97.4416 194.247 100 194.247C152.051 194.247 194.247 152.051 194.247 100C194.247 47.9486 152.051 5.75261 100 5.75261C47.9486 5.75261 5.75261 47.9486 5.75261 100Z" fill="#c5a908" />
-            <path d="M86.5073 193.289C88.453 193.568 90.4179 193.787 92.4 193.945V191.938L94.0615 185.815L97.0154 178.646L100.8 173.969L104.523 170.708L110.215 167.938L116.646 164.8L123.815 160.615L134.123 153.538L141.446 147.477L146.831 141.354L151.785 134.4L155.6 127.877L159.2 120.062L161.538 112.862L163.908 104.831L166.708 94.2154L169.077 86.4L170.923 81.2615L172.523 77.8154L173.877 75.0154L176.585 72.9538L177.046 72.0923H175.046L168.215 72.9538L161.908 74.2462L151.169 77.8154L137.354 84.3692L126.154 92.0615L116.431 100.308L108.123 109.785L101.354 119.2L98.4 124.677L95.9385 130.031L93.0769 137.754L90.3385 147.477L89.2308 154.954L88.5846 162L88.1846 172.092L87.5692 179.908L88.1846 179.415L89.2308 176.708L91.9385 167.692L96.5538 157.292L101.815 147.938L106.431 140.8L112.369 132.431L120.954 122.523L128.585 115.046L133.938 109.785L138.985 105.569L145.169 101.077L151.538 96.5538V97.5077L142.062 105.569L133.046 114.308L123.969 124.369L116.431 134.4L109.815 143.508L104.523 152.554L98.6154 162.369L94.6462 170.185L90.3385 179.415L88.1846 185.323L86.9231 190.185L86.5073 193.289Z" fill="#c5a908" />
-            <path d="M120.188 36.7695C120.229 53.108 120.286 85.9265 120.188 86.4926L122.803 84.708L125.726 82.5541L129.08 80.1849L133.111 78.0311L136.864 76.0003L140.741 74.1541L143.941 72.5541L146.803 71.6618V36.7695H120.188Z" fill="#c5a908" />
-            <path d="M30.463 151.108L26.8322 145.723L24.1245 141.292L22.3091 137.569L22.0938 136.277V111.508L45.3245 111.262V166.431L44.7091 166.154L41.5707 163.416L38.0014 159.939L33.8784 155.631L30.463 151.108Z" fill="#c5a908" />
+          <svg width="20" height="20" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path
+              d="M113.073 58.4297H86.3965L86.2734 133.63L86.7965 133.353L87.4119 132.276L88.1196 130.584L89.1965 127.753L90.6427 124.307L92.2119 120.645L94.3042 116.645L96.6734 113.045L98.6119 109.907L101.381 106.245L103.597 103.23L106.027 100.799L108.397 98.1528L110.858 95.5066L113.073 93.8143V58.4297Z"
+              fill="#c5a908" />
+            <path
+              d="M78.5546 80.3711H53.2315L53.0469 172.033L55.17 173.325L57.3853 174.771L59.8469 176.063L63.0161 177.663L66.6469 179.202L70.1238 180.556L73.2007 181.602L76.1238 182.186L78.5546 182.002V80.3711Z"
+              fill="#c5a908" />
+            <path
+              d="M200 100C200 155.228 155.228 200 100 200C44.7715 200 0 155.228 0 100C0 44.7715 44.7715 0 100 0C155.228 0 200 44.7715 200 100ZM5.75261 100C5.75261 147.47 40.8478 186.743 86.5073 193.289C88.453 193.568 90.4179 193.787 92.4 193.945C94.907 194.145 97.4416 194.247 100 194.247C152.051 194.247 194.247 152.051 194.247 100C194.247 47.9486 152.051 5.75261 100 5.75261C47.9486 5.75261 5.75261 47.9486 5.75261 100Z"
+              fill="#c5a908" />
+            <path
+              d="M86.5073 193.289C88.453 193.568 90.4179 193.787 92.4 193.945V191.938L94.0615 185.815L97.0154 178.646L100.8 173.969L104.523 170.708L110.215 167.938L116.646 164.8L123.815 160.615L134.123 153.538L141.446 147.477L146.831 141.354L151.785 134.4L155.6 127.877L159.2 120.062L161.538 112.862L163.908 104.831L166.708 94.2154L169.077 86.4L170.923 81.2615L172.523 77.8154L173.877 75.0154L176.585 72.9538L177.046 72.0923H175.046L168.215 72.9538L161.908 74.2462L151.169 77.8154L137.354 84.3692L126.154 92.0615L116.431 100.308L108.123 109.785L101.354 119.2L98.4 124.677L95.9385 130.031L93.0769 137.754L90.3385 147.477L89.2308 154.954L88.5846 162L88.1846 172.092L87.5692 179.908L88.1846 179.415L89.2308 176.708L91.9385 167.692L96.5538 157.292L101.815 147.938L106.431 140.8L112.369 132.431L120.954 122.523L128.585 115.046L133.938 109.785L138.985 105.569L145.169 101.077L151.538 96.5538V97.5077L142.062 105.569L133.046 114.308L123.969 124.369L116.431 134.4L109.815 143.508L104.523 152.554L98.6154 162.369L94.6462 170.185L90.3385 179.415L88.1846 185.323L86.9231 190.185L86.5073 193.289Z"
+              fill="#c5a908" />
+            <path
+              d="M120.188 36.7695C120.229 53.108 120.286 85.9265 120.188 86.4926L122.803 84.708L125.726 82.5541L129.08 80.1849L133.111 78.0311L136.864 76.0003L140.741 74.1541L143.941 72.5541L146.803 71.6618V36.7695H120.188Z"
+              fill="#c5a908" />
+            <path
+              d="M30.463 151.108L26.8322 145.723L24.1245 141.292L22.3091 137.569L22.0938 136.277V111.508L45.3245 111.262V166.431L44.7091 166.154L41.5707 163.416L38.0014 159.939L33.8784 155.631L30.463 151.108Z"
+              fill="#c5a908" />
           </svg>
 
           <div class="brand">
@@ -635,8 +709,9 @@
           <a href="#contact">Contact</a>
 
           <!-- RSVP button -->
-          <a class="rsvp" href="https://wa.me/264817161218?text=Hello%20Boena%20Investment%20Fund%2C%20I%20would%20like%20to%20RSVP%20for%20Sunday%20at%205%3A00%20PM.%20My%20name%20is%20____."
-             target="_blank" rel="noopener">RSVP</a>
+          <a class="rsvp"
+            href="https://wa.me/264817161218?text=Hello%20Boena%20Investment%20Fund%2C%20I%20would%20like%20to%20RSVP%20for%20Sunday%20at%205%3A00%20PM.%20My%20name%20is%20____."
+            target="_blank" rel="noopener">RSVP</a>
         </div>
 
         <!-- Mobile burger -->
@@ -656,7 +731,7 @@
           <a href="#contact" role="menuitem">Contact</a>
           <div class="divider" aria-hidden="true"></div>
           <a href="https://wa.me/264817161218?text=Hello%20Boena%20Investment%20Fund%2C%20I%20would%20like%20to%20RSVP%20for%20Sunday%20at%205%3A00%20PM.%20My%20name%20is%20____."
-             role="menuitem" target="_blank" rel="noopener">RSVP</a>
+            role="menuitem" target="_blank" rel="noopener">RSVP</a>
         </div>
       </nav>
 
@@ -666,8 +741,10 @@
           <div>
             <h2 class="section-title">Building discipline, unity, and <span class="accent">long-term growth</span></h2>
             <p class="section-sub">
-              The Boena Investment Fund is a private, structured initiative where members contribute fixed monthly amounts,
-              learn together, and collectively invest in real businesses and productive assets. This session is designed to share
+              The Boena Investment Fund is a private, structured initiative where members contribute fixed monthly
+              amounts,
+              learn together, and collectively invest in real businesses and productive assets. This session is designed
+              to share
               the vision, answer questions, and connect with like-minded individuals.
             </p>
             <div class="rule"></div>
@@ -679,8 +756,10 @@
           <div class="hero-card">
             <h3>Short About</h3>
             <p>
-              This initiative is built on clarity, structure, and shared responsibility. We focus on consistent contributions,
-              transparent tracking, and careful decision-making. Attendance is informational—there is no obligation to join.
+              This initiative is built on clarity, structure, and shared responsibility. We focus on consistent
+              contributions,
+              transparent tracking, and careful decision-making. Attendance is informational—there is no obligation to
+              join.
             </p>
             <span class="pill">Narrow path • long game</span>
           </div>
@@ -702,12 +781,31 @@
             <div class="detail">
               <div class="label">Time</div>
               <div class="value">Sunday • 5:00 PM</div>
-              <div style="margin-top:8px; color:var(--muted); font-size:13px; line-height:1.6;">
-                Online meeting link will be shared on <strong>Sunday afternoon</strong> before the session begins.
-              </div>
             </div>
           </div>
         </div>
+
+        <div style="margin-top:18px;">
+          <div class="contact-card">
+            <h3>Online Attendance</h3>
+
+            <p>To attend online, please <strong>RSVP with your full name and phone number</strong>.
+              You will be dialed in via <strong>WhatsApp call</strong>.
+            </p>
+
+            <div class="line">
+              Include: Name + Cellphone Number
+            </div>
+            
+            <a class="mini-link" style="margin-top:10px; display:inline-flex; font-weight:900;"
+              href="https://wa.me/264817161218?text=Hello%20Boena%20Investment%20Fund%2C%20I%20would%20like%20to%20attend%20ONLINE%20for%20Sunday%20at%205%3A00%20PM.%0A%0AFull%20Name%3A%20____%0APhone%20Number%3A%20____"
+              target="_blank" rel="noopener">
+              RSVP for Online Attendance →
+            </a>
+
+          </div>
+        </div>
+
       </section>
 
       <!-- SECTION 2: MEETING AGENDA -->
@@ -789,7 +887,8 @@
           <div>
             <h2 class="section-title">Member Questions &amp; <span class="accent">Clear Responses</span></h2>
             <p class="section-sub">
-              The answers below are intended to provide clarity and set shared expectations. Exact policies and processes will
+              The answers below are intended to provide clarity and set shared expectations. Exact policies and
+              processes will
               be documented in the fund charter as the group finalizes structure.
             </p>
             <div class="rule"></div>
@@ -826,7 +925,8 @@
             </div>
             <div class="answer">
               <p>
-                Many people struggle to save and invest consistently on their own, and individual capital is often too small
+                Many people struggle to save and invest consistently on their own, and individual capital is often too
+                small
                 for meaningful opportunities. The fund creates structure, accountability, and scale.
               </p>
             </div>
@@ -843,12 +943,15 @@
             </div>
             <div class="answer">
               <p>
-                Members who choose to join during the establishment phase commit to a fixed monthly contribution and shared
-                governance rules from the outset. Contributions are pooled, tracked transparently, and used only after group
+                Members who choose to join during the establishment phase commit to a fixed monthly contribution and
+                shared
+                governance rules from the outset. Contributions are pooled, tracked transparently, and used only after
+                group
                 discussion and approval.
               </p>
               <p style="margin-top:10px;">
-                Participation in this fund is limited to founding members. Once the fund is established and operations begin,
+                Participation in this fund is limited to founding members. Once the fund is established and operations
+                begin,
                 new members will not be accepted into this specific fund.
               </p>
             </div>
@@ -866,10 +969,12 @@
             <div class="answer">
               <p>
                 Membership for the Boena Investment Fund is limited to those who commit during the establishment phase.
-                Once the fund is formally established and operations begin, no new members will be accepted into this specific fund.
+                Once the fund is formally established and operations begin, no new members will be accepted into this
+                specific fund.
               </p>
               <p style="margin-top:10px;">
-                This approach protects stability, alignment, and trust between founding members, and prevents dilution of the fund’s culture and standards.
+                This approach protects stability, alignment, and trust between founding members, and prevents dilution
+                of the fund’s culture and standards.
               </p>
             </div>
           </div>
@@ -886,7 +991,8 @@
             <div class="answer">
               <p>
                 Allowing new members later often introduces uneven commitment, misalignment, and governance complexity.
-                By closing membership after formation, the fund protects decision-making integrity, fairness between members,
+                By closing membership after formation, the fund protects decision-making integrity, fairness between
+                members,
                 and long-term strategic focus.
               </p>
               <p style="margin-top:10px;">
@@ -905,7 +1011,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>Contributions are made monthly, by a fixed due date, using the agreed payment method. This ensures predictability, fairness, and proper planning for investments.</p>
+              <p>Contributions are made monthly, by a fixed due date, using the agreed payment method. This ensures
+                predictability, fairness, and proper planning for investments.</p>
             </div>
           </div>
 
@@ -919,7 +1026,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>Missed payments are recorded and handled according to predefined rules (e.g., grace period where applicable, review, suspension for repeated non-payment). Standards protect the group.</p>
+              <p>Missed payments are recorded and handled according to predefined rules (e.g., grace period where
+                applicable, review, suspension for repeated non-payment). Standards protect the group.</p>
             </div>
           </div>
 
@@ -933,7 +1041,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>All contributions and expenses are recorded in a shared tracking system visible to members. Regular summaries are provided, and no funds are used without documentation and approval.</p>
+              <p>All contributions and expenses are recorded in a shared tracking system visible to members. Regular
+                summaries are provided, and no funds are used without documentation and approval.</p>
             </div>
           </div>
 
@@ -947,7 +1056,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>Funds are held in a dedicated account with restricted access. No single person has unilateral control. Roles and responsibilities are defined and accountable to the group.</p>
+              <p>Funds are held in a dedicated account with restricted access. No single person has unilateral control.
+                Roles and responsibilities are defined and accountable to the group.</p>
             </div>
           </div>
 
@@ -961,7 +1071,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>Decisions follow a structured process: proposal, research, discussion, and democratic voting. Higher-risk decisions require broader agreement.</p>
+              <p>Decisions follow a structured process: proposal, research, discussion, and democratic voting.
+                Higher-risk decisions require broader agreement.</p>
             </div>
           </div>
 
@@ -975,7 +1086,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>The fund focuses on real, understandable investments such as small businesses, member-led ventures, and productive assets. Speculative or high-risk schemes are avoided.</p>
+              <p>The fund focuses on real, understandable investments such as small businesses, member-led ventures, and
+                productive assets. Speculative or high-risk schemes are avoided.</p>
             </div>
           </div>
 
@@ -989,7 +1101,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>There are no guaranteed returns. This is long-term wealth building. Returns depend on discipline, execution, market conditions, and time.</p>
+              <p>There are no guaranteed returns. This is long-term wealth building. Returns depend on discipline,
+                execution, market conditions, and time.</p>
             </div>
           </div>
 
@@ -1003,7 +1116,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>Not all investments succeed. The fund manages risk by starting small, researching thoroughly, diversifying, and improving decision-making over time.</p>
+              <p>Not all investments succeed. The fund manages risk by starting small, researching thoroughly,
+                diversifying, and improving decision-making over time.</p>
             </div>
           </div>
 
@@ -1017,7 +1131,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>This is not a personal savings account. Withdrawals are limited and subject to group rules and approval, protecting the fund’s stability and long-term objectives.</p>
+              <p>This is not a personal savings account. Withdrawals are limited and subject to group rules and
+                approval, protecting the fund’s stability and long-term objectives.</p>
             </div>
           </div>
 
@@ -1031,7 +1146,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>No. The fund is designed for working-class men with accessible monthly contributions. Consistency matters more than income level.</p>
+              <p>No. The fund is designed for working-class men with accessible monthly contributions. Consistency
+                matters more than income level.</p>
             </div>
           </div>
 
@@ -1045,7 +1161,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>Disagreements are expected. The charter defines how conflicts are handled through discussion, mediation, and voting. Rules take precedence over emotion.</p>
+              <p>Disagreements are expected. The charter defines how conflicts are handled through discussion,
+                mediation, and voting. Rules take precedence over emotion.</p>
             </div>
           </div>
 
@@ -1059,7 +1176,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>Leadership roles are defined, accountable, and rotatable. The fund is built on systems, not personalities, to ensure continuity and fairness.</p>
+              <p>Leadership roles are defined, accountable, and rotatable. The fund is built on systems, not
+                personalities, to ensure continuity and fairness.</p>
             </div>
           </div>
 
@@ -1073,7 +1191,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>This fund combines structure, transparency, education, and long-term thinking. It focuses on building disciplined members alongside capital.</p>
+              <p>This fund combines structure, transparency, education, and long-term thinking. It focuses on building
+                disciplined members alongside capital.</p>
             </div>
           </div>
 
@@ -1087,7 +1206,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>The fund is currently a private initiative. As it matures, appropriate legal and regulatory structures will be explored to support growth, governance, and compliance.</p>
+              <p>The fund is currently a private initiative. As it matures, appropriate legal and regulatory structures
+                will be explored to support growth, governance, and compliance.</p>
             </div>
           </div>
 
@@ -1101,7 +1221,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>No. There are no referral incentives, recruitment rewards, or payouts based on bringing in new members. Returns come only from approved investments.</p>
+              <p>No. There are no referral incentives, recruitment rewards, or payouts based on bringing in new members.
+                Returns come only from approved investments.</p>
             </div>
           </div>
 
@@ -1115,7 +1236,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>Members who are consistent, disciplined, and patient benefit the most. The system rewards commitment and long-term thinking, not shortcuts.</p>
+              <p>Members who are consistent, disciplined, and patient benefit the most. The system rewards commitment
+                and long-term thinking, not shortcuts.</p>
             </div>
           </div>
 
@@ -1129,7 +1251,8 @@
               </div>
             </div>
             <div class="answer">
-              <p>The long-term vision is to grow into a mature, well-governed investment vehicle that builds sustainable wealth and opportunity over time—phased, intentional, and disciplined.</p>
+              <p>The long-term vision is to grow into a mature, well-governed investment vehicle that builds sustainable
+                wealth and opportunity over time—phased, intentional, and disciplined.</p>
             </div>
           </div>
 
@@ -1145,7 +1268,8 @@
           <div>
             <h2 class="section-title">How to <span class="accent">Get in Touch</span></h2>
             <p class="section-sub">
-              If you are interested in learning more or would like to attend future sessions, you are welcome to contact us.
+              If you are interested in learning more or would like to attend future sessions, you are welcome to contact
+              us.
               Please include your full name and indicate whether you prefer in-person or virtual participation.
             </p>
             <div class="rule"></div>
@@ -1158,14 +1282,16 @@
             <h3>WhatsApp / Call</h3>
             <p>Reach out directly for questions, RSVP, or to request the virtual meeting link.</p>
             <div class="line">
-              Phone: <a href="tel:+264817161218">+264 81 716 1218</a> / <a href="tel:+264815732680">+264 81 573 2680</a><br />
+              Phone: <a href="tel:+264817161218">+264 81 716 1218</a> / <a href="tel:+264815732680">+264 81 573
+                2680</a><br />
               Hours: 08:00–20:00
             </div>
           </div>
 
           <div class="contact-card">
             <h3>Questions Ahead of Time</h3>
-            <p>If you have questions you would like addressed during a meeting, send them ahead of time so we can prepare clear responses.</p>
+            <p>If you have questions you would like addressed during a meeting, send them ahead of time so we can
+              prepare clear responses.</p>
             <div class="line">
               Preferred: WhatsApp message<br />
               Include: Name + question + topic
