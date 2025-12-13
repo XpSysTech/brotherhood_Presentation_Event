@@ -1,549 +1,628 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Brotherhood Investment Fund — Information Session</title>
+  <title>Boena Investment Fund — Information Session</title>
 
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
-    :root{
-      --ink:#121212;
-      --muted:#6b6f76;
-      --paper:#ffffff;
-      --bg:#f1f1f1;
-      --line:#e6e7ea;
-      --accent:#006A4E;
-      --accent-soft:#f7d7d7;
+    :root {
+      --ink: #121212;
+      --muted: #6b6f76;
+      --paper: #ffffff;
+      --bg: #f1f1f1;
+      --line: #e6e7ea;
+      --accent: #c5a908;
+      --accent-word: #006A4E;
+      --accent-soft: #FFD700;
     }
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    html{ scroll-behavior:smooth; }
+    * {
+      box-sizing: border-box;
+    }
 
-    body{
-      margin:0;
-      background:var(--bg);
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--ink);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      font-size:16px;
+    html,
+    body {
+      height: 100%;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 16px;
     }
 
     /* Page wrapper (paper card) */
-    .wrap{
-      min-height:100%;
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      padding:56px 18px;
+    .wrap {
+      min-height: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 56px 18px;
     }
 
-    .page{
-      width:min(1100px, 100%);
-      background:var(--paper);
-      border:1px solid var(--line);
-      box-shadow:0 12px 40px rgba(0,0,0,.06);
-      border-radius:16px;
-      overflow:visible;
-      padding:28px;
+    .page {
+      width: min(1100px, 100%);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .06);
+      border-radius: 16px;
+      overflow: visible;
+      padding: 28px;
     }
 
     /* Sticky nav */
-    .nav{
-      position:sticky;
-      top:14px;
-      z-index:50;
-      margin:0 0 16px;
-      padding:10px 12px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:linear-gradient(#fff,#fbfbfb);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      box-shadow:0 8px 22px rgba(0,0,0,.05);
+    .nav {
+      position: sticky;
+      top: 14px;
+      z-index: 50;
+      margin: 0 0 16px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: linear-gradient(#fff, #fbfbfb);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, .05);
     }
 
-    .nav-left{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width:180px;
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 180px;
     }
 
-    .dot{
-      width:9px;height:9px;border-radius:50%;
-      background:var(--accent);
-      box-shadow:0 0 0 4px var(--accent-soft);
-      flex:0 0 auto;
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent-word);
+      box-shadow: 0 0 0 4px var(--accent-soft);
+      flex: 0 0 auto;
     }
 
-    .brand{
-      display:flex;
-      flex-direction:column;
-      line-height:1.1;
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
     }
 
-    .brand .kicker{
-      font-size:11px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--muted);
-      font-weight:700;
+    .brand .kicker {
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
     }
 
-    .brand .name{
-      font-size:13px;
-      font-weight:700;
-      letter-spacing:-.01em;
-      margin-top:3px;
-      color:var(--ink);
-      white-space:nowrap;
+    .brand .name {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      margin-top: 3px;
+      color: var(--ink);
+      white-space: nowrap;
     }
 
-    .nav-links{
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:flex-end;
-      gap:8px;
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
     }
 
-    .nav a{
-      text-decoration:none;
-      color:var(--muted);
-      font-size:12.5px;
-      font-weight:700;
-      padding:9px 12px;
-      border-radius:999px;
-      border:1px solid transparent;
-      transition:all .15s ease;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      white-space:nowrap;
+    .nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: all .15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
     }
 
-    .nav a:hover{
-      color:var(--ink);
-      border-color:var(--line);
-      background:#fff;
+    .nav a:hover {
+      color: var(--ink);
+      border-color: var(--line);
+      background: #fff;
     }
 
-    .nav a.primary{
-      color:var(--ink);
-      border-color:var(--line);
-      background:#fff;
+    .nav a.primary {
+      color: var(--ink);
+      border-color: var(--line);
+      background: #fff;
     }
 
     /* Burger button (hidden on desktop) */
-    .burger{
-      display:none;
-      appearance:none;
-      border:1px solid var(--line);
-      background:#fff;
-      border-radius:999px;
-      padding:10px 12px;
-      cursor:pointer;
-      color:var(--ink);
-      font-weight:800;
-      font-size:12.5px;
-      line-height:1;
-      box-shadow:0 8px 22px rgba(0,0,0,.05);
+    .burger {
+      display: none;
+      appearance: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 999px;
+      padding: 10px 12px;
+      cursor: pointer;
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 12.5px;
+      line-height: 1;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, .05);
     }
-    .burger:focus{ outline:2px solid rgba(207,46,46,.25); outline-offset:2px; }
 
-    .burger-icon{
-      width:18px;
-      height:12px;
-      display:inline-flex;
-      flex-direction:column;
-      justify-content:space-between;
-      margin-right:8px;
-      vertical-align:middle;
+    .burger:focus {
+      outline: 2px solid rgba(207, 46, 46, .25);
+      outline-offset: 2px;
     }
-    .burger-icon span{
-      display:block;
-      height:2px;
-      background:var(--ink);
-      border-radius:2px;
-      opacity:.85;
+
+    .burger-icon {
+      width: 18px;
+      height: 12px;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .burger-icon span {
+      display: block;
+      height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+      opacity: .85;
     }
 
     /* Mobile dropdown panel */
-    .mobile-menu{
-      display:none;
-      position:absolute;
-      right:12px;
-      top:58px;
-      width:min(260px, calc(100vw - 32px));
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:14px;
-      box-shadow:0 14px 44px rgba(0,0,0,.10);
-      overflow:hidden;
-      padding:10px;
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      right: 12px;
+      top: 58px;
+      width: min(260px, calc(100vw - 32px));
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 14px 44px rgba(0, 0, 0, .10);
+      overflow: hidden;
+      padding: 10px;
     }
-    .mobile-menu a{
-      display:flex;
-      width:100%;
-      padding:12px 12px;
-      border-radius:12px;
-      border:1px solid transparent;
-      color:var(--ink);
-      font-size:13px;
-      font-weight:800;
-      text-decoration:none;
+
+    .mobile-menu a {
+      display: flex;
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
     }
-    .mobile-menu a:hover{
-      border-color:var(--line);
-      background:linear-gradient(#fff,#fbfbfb);
+
+    .mobile-menu a:hover {
+      border-color: var(--line);
+      background: linear-gradient(#fff, #fbfbfb);
     }
-    .mobile-menu .divider{
-      height:1px;
-      background:var(--line);
-      margin:8px 0;
+
+    .mobile-menu .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 8px 0;
     }
 
     /* Sections */
-    section{
-      padding:28px 38px;
-      border:1px solid var(--line);
-      border-radius:14px;
-      background:#fff;
-      margin:16px 0;
+    section {
+      padding: 28px 38px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      margin: 16px 0;
     }
 
-    .section-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:18px;
-      padding-bottom:14px;
-      border-bottom:1px solid var(--line);
-      margin-bottom:18px;
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 18px;
     }
 
-    .section-title{
-      margin:0;
-      font-size:26px;
-      line-height:1.15;
-      letter-spacing:-.02em;
-      font-weight:800;
-    }
-    .section-title .accent{ color:var(--accent); }
-
-    .section-sub{
-      margin:10px 0 0;
-      color:var(--muted);
-      font-size:14.5px;
-      line-height:1.75;
-      max-width:70ch;
+    .section-title {
+      margin: 0;
+      font-size: 26px;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      font-weight: 800;
     }
 
-    .rule{
-      height:3px;
-      width:140px;
-      background:var(--ink);
-      border-radius:999px;
-      opacity:.9;
-      margin-top:14px;
+    .section-title .accent {
+      color: var(--accent-word);
     }
 
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 12px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      color:var(--muted);
-      font-size:12.5px;
-      font-weight:700;
-      background:linear-gradient(#fff,#fbfbfb);
-      white-space:nowrap;
+    .section-sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.75;
+      max-width: 70ch;
+    }
+
+    .rule {
+      height: 3px;
+      width: 140px;
+      background: var(--ink);
+      border-radius: 999px;
+      opacity: .9;
+      margin-top: 14px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12.5px;
+      font-weight: 700;
+      background: linear-gradient(#fff, #fbfbfb);
+      white-space: nowrap;
     }
 
     /* Hero layout */
-    .hero-grid{
-      display:grid;
+    .hero-grid {
+      display: grid;
       grid-template-columns: 1.3fr .7fr;
-      gap:18px;
-      margin-top:6px;
+      gap: 18px;
+      margin-top: 6px;
     }
 
-    .hero-card{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:18px 18px;
-      background:linear-gradient(#fff,#fbfbfb);
+    .hero-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 18px;
+      background: linear-gradient(#fff, #fbfbfb);
     }
 
-    .hero-card h3{
-      margin:0 0 10px;
-      font-size:14.5px;
-      font-weight:800;
-      letter-spacing:-.01em;
+    .hero-card h3 {
+      margin: 0 0 10px;
+      font-size: 14.5px;
+      font-weight: 800;
+      letter-spacing: -.01em;
     }
 
-    .hero-card p{
-      margin:0;
-      color:#23262b;
-      font-size:14.5px;
-      line-height:1.85;
+    .hero-card p {
+      margin: 0;
+      color: #23262b;
+      font-size: 14.5px;
+      line-height: 1.85;
     }
 
-    .details{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    .detail{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:14px 14px;
-      background:#fff;
+    .detail {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 14px;
+      background: #fff;
     }
 
-    .detail .label{
-      font-size:12px;
-      color:var(--muted);
-      font-weight:700;
-      letter-spacing:.08em;
-      text-transform:uppercase;
+    .detail .label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
 
-    .detail .value{
-      margin-top:6px;
-      font-size:14.5px;
-      font-weight:800;
-      letter-spacing:-.01em;
+    .detail .value {
+      margin-top: 6px;
+      font-size: 14.5px;
+      font-weight: 800;
+      letter-spacing: -.01em;
     }
 
-    .pill{
-      display:inline-block;
-      font-size:11.5px;
-      font-weight:800;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      color:var(--accent);
-      background:linear-gradient(#fff,#fbfbfb);
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:6px 10px;
-      margin-top:10px;
+    .pill {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: linear-gradient(#fff, #fbfbfb);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      margin-top: 10px;
     }
 
     /* Agenda */
-    .agenda{ display:flex; flex-direction:column; gap:12px; }
+    .agenda {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
 
-    .agenda-item{
-      border-top:1px solid var(--line);
-      padding-top:14px;
-      display:grid;
+    .agenda-item {
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      display: grid;
       grid-template-columns: 140px 1fr;
-      gap:14px;
+      gap: 14px;
     }
 
-    .time{
-      font-weight:900;
-      color:var(--accent);
-      letter-spacing:-.01em;
-      font-size:14px;
-      white-space:nowrap;
+    .time {
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: -.01em;
+      font-size: 14px;
+      white-space: nowrap;
     }
 
-    .agenda-item h4{
-      margin:0;
-      font-size:15px;
-      font-weight:800;
-      letter-spacing:-.01em;
+    .agenda-item h4 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -.01em;
     }
 
-    .agenda-item p{
-      margin:6px 0 0;
-      color:#23262b;
-      font-size:14.5px;
-      line-height:1.85;
+    .agenda-item p {
+      margin: 6px 0 0;
+      color: #23262b;
+      font-size: 14.5px;
+      line-height: 1.85;
     }
 
     /* FAQ list (stacked) */
-    .faq{ display:flex; flex-direction:column; gap:22px; }
+    .faq {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
 
-    .faq-item{
-      border-top:1px solid var(--line);
-      padding-top:18px;
-      display:grid;
+    .faq-item {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      display: grid;
       grid-template-columns: 240px 1fr;
-      gap:18px;
+      gap: 18px;
     }
 
-    .meta{
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
+    .meta {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
     }
 
-    .num{
-      font-weight:900;
-      color:var(--accent);
-      font-size:15px;
-      min-width:30px;
+    .num {
+      font-weight: 900;
+      color: var(--accent);
+      font-size: 15px;
+      min-width: 30px;
     }
 
-    .meta h4{
-      margin:0;
-      font-size:15px;
-      line-height:1.45;
-      font-weight:900;
-      letter-spacing:-.01em;
+    .meta h4 {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.45;
+      font-weight: 900;
+      letter-spacing: -.01em;
     }
 
-    .meta .label{
-      margin-top:7px;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.55;
-      font-weight:600;
+    .meta .label {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 600;
     }
 
-    .answer{
-      color:#23262b;
-      font-size:14.5px;
-      line-height:1.9;
+    .answer {
+      color: #23262b;
+      font-size: 14.5px;
+      line-height: 1.9;
     }
-    .answer p{ margin:0; }
+
+    .answer p {
+      margin: 0;
+    }
 
     /* Contact section */
-    .contact-grid{
-      display:grid;
+    .contact-grid {
+      display: grid;
       grid-template-columns: 1fr 1fr;
-      gap:16px;
-      margin-top:8px;
+      gap: 16px;
+      margin-top: 8px;
     }
 
-    .contact-card{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:18px;
-      background:linear-gradient(#fff,#fbfbfb);
+    .contact-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: linear-gradient(#fff, #fbfbfb);
     }
 
-    .contact-card h3{
-      margin:0 0 10px;
-      font-size:15px;
-      font-weight:900;
-      letter-spacing:-.01em;
+    .contact-card h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: -.01em;
     }
 
-    .contact-card p{
-      margin:0;
-      color:#23262b;
-      font-size:14.5px;
-      line-height:1.85;
+    .contact-card p {
+      margin: 0;
+      color: #23262b;
+      font-size: 14.5px;
+      line-height: 1.85;
     }
 
-    .contact-card .line{
-      margin-top:12px;
-      padding-top:12px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:13.5px;
-      line-height:1.7;
+    .contact-card .line {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.7;
     }
 
-    .contact-card a{
-      color:var(--ink);
-      font-weight:900;
-      text-decoration:none;
-      border-bottom:1px solid var(--line);
+    .contact-card a {
+      color: var(--ink);
+      font-weight: 900;
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
     }
 
-    .contact-card a:hover{ border-bottom-color:var(--accent); }
+    .contact-card a:hover {
+      border-bottom-color: var(--accent);
+    }
 
     /* Footer */
-    .footer{
-      margin-top:16px;
-      padding:14px 12px 2px;
-      color:var(--muted);
-      font-size:12.5px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
+    .footer {
+      margin-top: 16px;
+      padding: 14px 12px 2px;
+      color: var(--muted);
+      font-size: 12.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
     }
-    .footer strong{ color:var(--ink); }
 
-    .mini-rule{
-      height:2px;
-      width:110px;
-      background:var(--accent);
-      border-radius:999px;
-      opacity:.85;
+    .footer strong {
+      color: var(--ink);
+    }
+
+    .mini-rule {
+      height: 2px;
+      width: 110px;
+      background: var(--accent);
+      border-radius: 999px;
+      opacity: .85;
     }
 
     /* ===== Small screens: fix spacing + burger nav ===== */
-    @media (max-width: 700px){
-      .wrap{ padding:20px 12px; }
-
-      .page{
-        padding:14px;
-        border-radius:14px;
+    @media (max-width: 700px) {
+      .wrap {
+        padding: 20px 12px;
       }
 
-      .nav{
-        top:10px;
-        border-radius:14px;
-        padding:10px 10px;
+      .page {
+        padding: 14px;
+        border-radius: 14px;
       }
 
-      .nav-left{ min-width:0; }
-      .brand .kicker{ font-size:10px; }
-      .brand .name{ font-size:12px; }
-
-      .nav-links{ display:none; }
-      .burger{ display:inline-flex; align-items:center; }
-
-      .mobile-menu{ top:56px; right:10px; }
-
-      section{
-        padding:18px 14px;
-        margin:12px 0;
-        border-radius:14px;
+      .nav {
+        top: 10px;
+        border-radius: 14px;
+        padding: 10px 10px;
       }
 
-      .section-head{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:10px;
-        padding-bottom:12px;
-        margin-bottom:14px;
+      .nav-left {
+        min-width: 0;
       }
 
-      .section-title{
-        font-size:22px;
-        line-height:1.15;
+      .brand .kicker {
+        font-size: 10px;
       }
 
-      .section-sub{
-        font-size:14px;
-        line-height:1.75;
+      .brand .name {
+        font-size: 12px;
       }
 
-      .rule{ width:110px; margin-top:12px; }
+      .nav-links {
+        display: none;
+      }
 
-      .hero-grid{ grid-template-columns:1fr; }
-      .agenda-item{ grid-template-columns:1fr; }
-      .faq-item{ grid-template-columns:1fr; }
-      .contact-grid{ grid-template-columns:1fr; }
+      .burger {
+        display: inline-flex;
+        align-items: center;
+      }
 
-      .badge{ font-size:12px; padding:9px 11px; }
-      .mobile-menu a{ padding:12px 12px; }
+      .mobile-menu {
+        top: 56px;
+        right: 10px;
+      }
+
+      section {
+        padding: 18px 14px;
+        margin: 12px 0;
+        border-radius: 14px;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding-bottom: 12px;
+        margin-bottom: 14px;
+      }
+
+      .section-title {
+        font-size: 22px;
+        line-height: 1.15;
+      }
+
+      .section-sub {
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .rule {
+        width: 110px;
+        margin-top: 12px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .agenda-item {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-item {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .badge {
+        font-size: 12px;
+        padding: 9px 11px;
+      }
+
+      .mobile-menu a {
+        padding: 12px 12px;
+      }
     }
   </style>
 </head>
@@ -555,9 +634,30 @@
       <!-- Navigation -->
       <nav class="nav" aria-label="Page navigation" id="topNav">
         <div class="nav-left">
-          <span class="dot" aria-hidden="true"></span>
+          <!-- <span class="dot" aria-hidden="true"></span> -->
+          <svg width="20" height="20" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M113.073 58.4297H86.3965L86.2734 133.63L86.7965 133.353L87.4119 132.276L88.1196 130.584L89.1965 127.753L90.6427 124.307L92.2119 120.645L94.3042 116.645L96.6734 113.045L98.6119 109.907L101.381 106.245L103.597 103.23L106.027 100.799L108.397 98.1528L110.858 95.5066L113.073 93.8143V58.4297Z"
+              fill="#c5a908" />
+            <path
+              d="M78.5546 80.3711H53.2315L53.0469 172.033L55.17 173.325L57.3853 174.771L59.8469 176.063L63.0161 177.663L66.6469 179.202L70.1238 180.556L73.2007 181.602L76.1238 182.186L78.5546 182.002V80.3711Z"
+              fill="#c5a908" />
+            <path
+              d="M200 100C200 155.228 155.228 200 100 200C44.7715 200 0 155.228 0 100C0 44.7715 44.7715 0 100 0C155.228 0 200 44.7715 200 100ZM5.75261 100C5.75261 147.47 40.8478 186.743 86.5073 193.289C88.453 193.568 90.4179 193.787 92.4 193.945C94.907 194.145 97.4416 194.247 100 194.247C152.051 194.247 194.247 152.051 194.247 100C194.247 47.9486 152.051 5.75261 100 5.75261C47.9486 5.75261 5.75261 47.9486 5.75261 100Z"
+              fill="#c5a908" />
+            <path
+              d="M86.5073 193.289C88.453 193.568 90.4179 193.787 92.4 193.945V191.938L94.0615 185.815L97.0154 178.646L100.8 173.969L104.523 170.708L110.215 167.938L116.646 164.8L123.815 160.615L134.123 153.538L141.446 147.477L146.831 141.354L151.785 134.4L155.6 127.877L159.2 120.062L161.538 112.862L163.908 104.831L166.708 94.2154L169.077 86.4L170.923 81.2615L172.523 77.8154L173.877 75.0154L176.585 72.9538L177.046 72.0923H175.046L168.215 72.9538L161.908 74.2462L151.169 77.8154L137.354 84.3692L126.154 92.0615L116.431 100.308L108.123 109.785L101.354 119.2L98.4 124.677L95.9385 130.031L93.0769 137.754L90.3385 147.477L89.2308 154.954L88.5846 162L88.1846 172.092L87.5692 179.908L88.1846 179.415L89.2308 176.708L91.9385 167.692L96.5538 157.292L101.815 147.938L106.431 140.8L112.369 132.431L120.954 122.523L128.585 115.046L133.938 109.785L138.985 105.569L145.169 101.077L151.538 96.5538V97.5077L142.062 105.569L133.046 114.308L123.969 124.369L116.431 134.4L109.815 143.508L104.523 152.554L98.6154 162.369L94.6462 170.185L90.3385 179.415L88.1846 185.323L86.9231 190.185L86.5073 193.289Z"
+              fill="#c5a908" />
+            <path
+              d="M120.188 36.7695C120.229 53.108 120.286 85.9265 120.188 86.4926L122.803 84.708L125.726 82.5541L129.08 80.1849L133.111 78.0311L136.864 76.0003L140.741 74.1541L143.941 72.5541L146.803 71.6618V36.7695H120.188Z"
+              fill="#c5a908" />
+            <path
+              d="M30.463 151.108L26.8322 145.723L24.1245 141.292L22.3091 137.569L22.0938 136.277V111.508L45.3245 111.262V166.431L44.7091 166.154L41.5707 163.416L38.0014 159.939L33.8784 155.631L30.463 151.108Z"
+              fill="#c5a908" />
+          </svg>
+
           <div class="brand">
-            <div class="kicker">Brotherhood Investment Fund</div>
+            <div class="kicker">Boena Investment Fund</div>
             <div class="name">Information Session</div>
           </div>
         </div>
@@ -594,8 +694,10 @@
           <div>
             <h2 class="section-title">Building discipline, unity, and <span class="accent">long-term growth</span></h2>
             <p class="section-sub">
-              The Brotherhood Investment Fund is a private, structured initiative where members contribute fixed monthly amounts,
-              learn together, and collectively invest in real businesses and productive assets. This session is designed to share
+              The Boena Investment Fund is a private, structured initiative where members contribute fixed monthly
+              amounts,
+              learn together, and collectively invest in real businesses and productive assets. This session is designed
+              to share
               the vision, answer questions, and connect with like-minded individuals.
             </p>
             <div class="rule"></div>
@@ -607,8 +709,10 @@
           <div class="hero-card">
             <h3>Short About</h3>
             <p>
-              This initiative is built on clarity, structure, and shared responsibility. We focus on consistent contributions,
-              transparent tracking, and careful decision-making. Attendance is informational—there is no obligation to join.
+              This initiative is built on clarity, structure, and shared responsibility. We focus on consistent
+              contributions,
+              transparent tracking, and careful decision-making. Attendance is informational—there is no obligation to
+              join.
             </p>
             <span class="pill">Narrow path • long game</span>
           </div>
@@ -636,7 +740,8 @@
           <div>
             <h2 class="section-title">Meeting <span class="accent">Agenda</span></h2>
             <p class="section-sub">
-              A clear structure for the session to ensure useful discussion, transparency, and enough time for questions and networking.
+              A clear structure for the session to ensure useful discussion, transparency, and enough time for questions
+              and networking.
             </p>
             <div class="rule"></div>
           </div>
@@ -708,7 +813,8 @@
           <div>
             <h2 class="section-title">Member Questions &amp; <span class="accent">Clear Responses</span></h2>
             <p class="section-sub">
-              The answers below are intended to provide clarity and set shared expectations. Exact policies and processes will
+              The answers below are intended to provide clarity and set shared expectations. Exact policies and
+              processes will
               be documented in the fund charter as the group finalizes structure.
             </p>
             <div class="rule"></div>
@@ -722,7 +828,7 @@
             <div class="meta">
               <div class="num">01</div>
               <div>
-                <h4>What exactly is the Brotherhood Investment Fund?</h4>
+                <h4>What exactly is the Boena Investment Fund?</h4>
                 <div class="label">Definition &amp; scope</div>
               </div>
             </div>
@@ -745,7 +851,8 @@
             </div>
             <div class="answer">
               <p>
-                Many people struggle to save and invest consistently on their own, and individual capital is often too small
+                Many people struggle to save and invest consistently on their own, and individual capital is often too
+                small
                 for meaningful opportunities. The fund creates structure, accountability, and scale.
               </p>
             </div>
@@ -762,12 +869,15 @@
             </div>
             <div class="answer">
               <p>
-                Members who choose to join during the establishment phase commit to a fixed monthly contribution and shared
-                governance rules from the outset. Contributions are pooled, tracked transparently, and used only after group
+                Members who choose to join during the establishment phase commit to a fixed monthly contribution and
+                shared
+                governance rules from the outset. Contributions are pooled, tracked transparently, and used only after
+                group
                 discussion and approval.
               </p>
               <p style="margin-top:10px;">
-                Participation in this fund is limited to founding members. Once the fund is established and operations begin,
+                Participation in this fund is limited to founding members. Once the fund is established and operations
+                begin,
                 new members will not be accepted into this specific fund.
               </p>
             </div>
@@ -784,11 +894,13 @@
             </div>
             <div class="answer">
               <p>
-                Membership for the Brotherhood Investment Fund is limited to those who commit during the establishment phase.
-                Once the fund is formally established and operations begin, no new members will be accepted into this specific fund.
+                Membership for the Boena Investment Fund is limited to those who commit during the establishment phase.
+                Once the fund is formally established and operations begin, no new members will be accepted into this
+                specific fund.
               </p>
               <p style="margin-top:10px;">
-                This approach protects stability, alignment, and trust between founding members, and prevents dilution of the fund’s culture and standards.
+                This approach protects stability, alignment, and trust between founding members, and prevents dilution
+                of the fund’s culture and standards.
               </p>
             </div>
           </div>
@@ -805,7 +917,8 @@
             <div class="answer">
               <p>
                 Allowing new members later often introduces uneven commitment, misalignment, and governance complexity.
-                By closing membership after formation, the fund protects decision-making integrity, fairness between members,
+                By closing membership after formation, the fund protects decision-making integrity, fairness between
+                members,
                 and long-term strategic focus.
               </p>
               <p style="margin-top:10px;">
@@ -823,7 +936,10 @@
                 <div class="label">Payment structure</div>
               </div>
             </div>
-            <div class="answer"><p>Contributions are made monthly, by a fixed due date, using the agreed payment method. This ensures predictability, fairness, and proper planning for investments.</p></div>
+            <div class="answer">
+              <p>Contributions are made monthly, by a fixed due date, using the agreed payment method. This ensures
+                predictability, fairness, and proper planning for investments.</p>
+            </div>
           </div>
 
           <!-- 07 -->
@@ -835,7 +951,10 @@
                 <div class="label">Standards &amp; consequences</div>
               </div>
             </div>
-            <div class="answer"><p>Missed payments are recorded and handled according to predefined rules (e.g., grace period where applicable, review, suspension for repeated non-payment). Standards protect the group.</p></div>
+            <div class="answer">
+              <p>Missed payments are recorded and handled according to predefined rules (e.g., grace period where
+                applicable, review, suspension for repeated non-payment). Standards protect the group.</p>
+            </div>
           </div>
 
           <!-- 08 -->
@@ -847,7 +966,10 @@
                 <div class="label">Trust through systems</div>
               </div>
             </div>
-            <div class="answer"><p>All contributions and expenses are recorded in a shared tracking system visible to members. Regular summaries are provided, and no funds are used without documentation and approval.</p></div>
+            <div class="answer">
+              <p>All contributions and expenses are recorded in a shared tracking system visible to members. Regular
+                summaries are provided, and no funds are used without documentation and approval.</p>
+            </div>
           </div>
 
           <!-- 09 -->
@@ -859,7 +981,10 @@
                 <div class="label">Custody &amp; control</div>
               </div>
             </div>
-            <div class="answer"><p>Funds are held in a dedicated account with restricted access. No single person has unilateral control. Roles and responsibilities are defined and accountable to the group.</p></div>
+            <div class="answer">
+              <p>Funds are held in a dedicated account with restricted access. No single person has unilateral control.
+                Roles and responsibilities are defined and accountable to the group.</p>
+            </div>
           </div>
 
           <!-- 10 -->
@@ -871,7 +996,10 @@
                 <div class="label">Governance process</div>
               </div>
             </div>
-            <div class="answer"><p>Decisions follow a structured process: proposal, research, discussion, and democratic voting. Higher-risk decisions require broader agreement.</p></div>
+            <div class="answer">
+              <p>Decisions follow a structured process: proposal, research, discussion, and democratic voting.
+                Higher-risk decisions require broader agreement.</p>
+            </div>
           </div>
 
           <!-- 11 -->
@@ -883,7 +1011,10 @@
                 <div class="label">Focus areas</div>
               </div>
             </div>
-            <div class="answer"><p>The fund focuses on real, understandable investments such as small businesses, member-led ventures, and productive assets. Speculative or high-risk schemes are avoided.</p></div>
+            <div class="answer">
+              <p>The fund focuses on real, understandable investments such as small businesses, member-led ventures, and
+                productive assets. Speculative or high-risk schemes are avoided.</p>
+            </div>
           </div>
 
           <!-- 12 -->
@@ -895,7 +1026,10 @@
                 <div class="label">Expectations</div>
               </div>
             </div>
-            <div class="answer"><p>There are no guaranteed returns. This is long-term wealth building. Returns depend on discipline, execution, market conditions, and time.</p></div>
+            <div class="answer">
+              <p>There are no guaranteed returns. This is long-term wealth building. Returns depend on discipline,
+                execution, market conditions, and time.</p>
+            </div>
           </div>
 
           <!-- 13 -->
@@ -907,7 +1041,10 @@
                 <div class="label">Risk &amp; learning</div>
               </div>
             </div>
-            <div class="answer"><p>Not all investments succeed. The fund manages risk by starting small, researching thoroughly, diversifying, and improving decision-making over time.</p></div>
+            <div class="answer">
+              <p>Not all investments succeed. The fund manages risk by starting small, researching thoroughly,
+                diversifying, and improving decision-making over time.</p>
+            </div>
           </div>
 
           <!-- 14 -->
@@ -919,7 +1056,10 @@
                 <div class="label">Liquidity rules</div>
               </div>
             </div>
-            <div class="answer"><p>This is not a personal savings account. Withdrawals are limited and subject to group rules and approval, protecting the fund’s stability and long-term objectives.</p></div>
+            <div class="answer">
+              <p>This is not a personal savings account. Withdrawals are limited and subject to group rules and
+                approval, protecting the fund’s stability and long-term objectives.</p>
+            </div>
           </div>
 
           <!-- 15 -->
@@ -931,7 +1071,10 @@
                 <div class="label">Accessibility</div>
               </div>
             </div>
-            <div class="answer"><p>No. The fund is designed for working-class men with accessible monthly contributions. Consistency matters more than income level.</p></div>
+            <div class="answer">
+              <p>No. The fund is designed for working-class men with accessible monthly contributions. Consistency
+                matters more than income level.</p>
+            </div>
           </div>
 
           <!-- 16 -->
@@ -943,7 +1086,10 @@
                 <div class="label">Stability</div>
               </div>
             </div>
-            <div class="answer"><p>Disagreements are expected. The charter defines how conflicts are handled through discussion, mediation, and voting. Rules take precedence over emotion.</p></div>
+            <div class="answer">
+              <p>Disagreements are expected. The charter defines how conflicts are handled through discussion,
+                mediation, and voting. Rules take precedence over emotion.</p>
+            </div>
           </div>
 
           <!-- 17 -->
@@ -955,7 +1101,10 @@
                 <div class="label">Roles &amp; accountability</div>
               </div>
             </div>
-            <div class="answer"><p>Leadership roles are defined, accountable, and rotatable. The fund is built on systems, not personalities, to ensure continuity and fairness.</p></div>
+            <div class="answer">
+              <p>Leadership roles are defined, accountable, and rotatable. The fund is built on systems, not
+                personalities, to ensure continuity and fairness.</p>
+            </div>
           </div>
 
           <!-- 18 -->
@@ -967,7 +1116,10 @@
                 <div class="label">Differentiation</div>
               </div>
             </div>
-            <div class="answer"><p>This fund combines structure, transparency, education, and long-term thinking. It focuses on building disciplined members alongside capital.</p></div>
+            <div class="answer">
+              <p>This fund combines structure, transparency, education, and long-term thinking. It focuses on building
+                disciplined members alongside capital.</p>
+            </div>
           </div>
 
           <!-- 19 -->
@@ -979,7 +1131,10 @@
                 <div class="label">Compliance path</div>
               </div>
             </div>
-            <div class="answer"><p>The fund is currently a private initiative. As it matures, appropriate legal and regulatory structures will be explored to support growth, governance, and compliance.</p></div>
+            <div class="answer">
+              <p>The fund is currently a private initiative. As it matures, appropriate legal and regulatory structures
+                will be explored to support growth, governance, and compliance.</p>
+            </div>
           </div>
 
           <!-- 20 -->
@@ -991,7 +1146,10 @@
                 <div class="label">How growth works</div>
               </div>
             </div>
-            <div class="answer"><p>No. There are no referral incentives, recruitment rewards, or payouts based on bringing in new members. Returns come only from approved investments.</p></div>
+            <div class="answer">
+              <p>No. There are no referral incentives, recruitment rewards, or payouts based on bringing in new members.
+                Returns come only from approved investments.</p>
+            </div>
           </div>
 
           <!-- 21 -->
@@ -1003,7 +1161,10 @@
                 <div class="label">Fairness</div>
               </div>
             </div>
-            <div class="answer"><p>Members who are consistent, disciplined, and patient benefit the most. The system rewards commitment and long-term thinking, not shortcuts.</p></div>
+            <div class="answer">
+              <p>Members who are consistent, disciplined, and patient benefit the most. The system rewards commitment
+                and long-term thinking, not shortcuts.</p>
+            </div>
           </div>
 
           <!-- 22 -->
@@ -1015,7 +1176,10 @@
                 <div class="label">Direction</div>
               </div>
             </div>
-            <div class="answer"><p>The long-term vision is to grow into a mature, well-governed investment vehicle that builds sustainable wealth and opportunity over time—phased, intentional, and disciplined.</p></div>
+            <div class="answer">
+              <p>The long-term vision is to grow into a mature, well-governed investment vehicle that builds sustainable
+                wealth and opportunity over time—phased, intentional, and disciplined.</p>
+            </div>
           </div>
 
           <div style="margin-top:14px;">
@@ -1030,7 +1194,8 @@
           <div>
             <h2 class="section-title">How to <span class="accent">Get in Touch</span></h2>
             <p class="section-sub">
-              If you are interested in learning more or would like to attend future sessions, you are welcome to contact us.
+              If you are interested in learning more or would like to attend future sessions, you are welcome to contact
+              us.
               Please include your full name and indicate whether you prefer in-person or virtual participation.
             </p>
             <div class="rule"></div>
@@ -1043,14 +1208,16 @@
             <h3>WhatsApp / Call</h3>
             <p>Reach out directly for questions, RSVP, or to request the virtual meeting link.</p>
             <div class="line">
-              Phone: <a href="tel:+264817161218">+264 81 716 1218</a> / <a href="tel:+264815732680">+264 81 573 2680</a><br />
+              Phone: <a href="tel:+264817161218">+264 81 716 1218</a> / <a href="tel:+264815732680">+264 81 573
+                2680</a><br />
               Hours: 08:00–20:00
             </div>
           </div>
 
           <div class="contact-card">
             <h3>Questions Ahead of Time</h3>
-            <p>If you have questions you would like addressed during a meeting, send them ahead of time so we can prepare clear responses.</p>
+            <p>If you have questions you would like addressed during a meeting, send them ahead of time so we can
+              prepare clear responses.</p>
             <div class="line">
               Preferred: WhatsApp message<br />
               Include: Name + question + topic
@@ -1065,7 +1232,7 @@
 
       <footer class="footer" role="contentinfo" style="flex-direction:column; align-items:flex-start;">
         <div style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:16px;">
-          <div><strong>Brotherhood Investment Fund</strong> — Information Session</div>
+          <div><strong>Boena Investment Fund</strong> — Information Session</div>
           <div class="mini-rule"></div>
           <div>Updated: <span style="color:var(--ink);font-weight:900;">Version 1.0</span></div>
         </div>
@@ -1124,4 +1291,5 @@
     })();
   </script>
 </body>
+
 </html>

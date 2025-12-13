@@ -1,8 +1,8 @@
-# Brotherhood Investment Fund — Information Session Page
+# Boena Investment Fund — Information Session Page
 
 ## Overview
 
-This repository contains the source code for a **single-page informational website** created for a **one-day, in-person investment information session** hosted by the Brotherhood Investment Fund.
+This repository contains the source code for a **single-page informational website** created for a **one-day, in-person investment information session** hosted by the Boena Investment Fund.
 
 The page was intentionally designed as a **temporary, event-specific site** to provide clarity, structure, and professionalism for attendees before and during the session. It is not intended to function as a permanent public website.
 
@@ -14,7 +14,7 @@ The visual and structural style is inspired by **large government, institutional
 
 The primary objectives of this page are to:
 
-- Present a clear overview of the Brotherhood Investment Fund initiative
+- Present a clear overview of the Boena Investment Fund initiative
 - Communicate the meeting agenda and expectations
 - Provide structured responses to common member questions
 - Offer clear contact information for follow-up and virtual attendance
